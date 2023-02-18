@@ -16,15 +16,13 @@ import java.util.Set;
 import javax.lang.model.element.TypeElement;
 
 @AutoService(Processor.class)
-@SupportedSourceVersion(SourceVersion.RELEASE_17)
 @SupportedAnnotationTypes("com.donnoe.amanda.annotations.ConstantIndexer")
-public class ConstantIndexerProcessor extends AbstractProcessor {
-    @Override
+public class ConstantIndexerProcessor extends MyAbstractProcessor {
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        System.out.println(annotations);
-        annotations.forEach(annotation ->
-                roundEnv.getElementsAnnotatedWith(annotation)
-        );
-        return true;
+        try {
+            return super.process(annotations, roundEnv);
+        } finally {
+            System.out.println(tags);
+        }
     }
 }
