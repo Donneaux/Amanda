@@ -8,6 +8,9 @@ package com.donnoe.amanda.annotations;
  *
  * @author joshuadonnoe
  */
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.SOURCE)
 public @interface ConstantIndexer {
     public int tag();
     public int size = 1;

@@ -18,7 +18,6 @@ import javax.lang.model.element.TypeElement;
 @AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_17)
 @SupportedAnnotationTypes("com.donnoe.amanda.annotations.ConstantIndexer")
-
 public class ConstantIndexerProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
