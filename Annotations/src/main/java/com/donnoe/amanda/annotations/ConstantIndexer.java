@@ -12,6 +12,5 @@ import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.SOURCE)
 public @interface ConstantIndexer {
-    public int tag();
-    public int size = 1;
+    public int value();
 }

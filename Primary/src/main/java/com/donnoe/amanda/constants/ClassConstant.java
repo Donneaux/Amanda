@@ -9,7 +9,7 @@ package com.donnoe.amanda.constants;
  */
 import com.donnoe.amanda.annotations.ConstantIndexer;
 
-@ConstantIndexer(tag=7)
+@ConstantIndexer(7)
 public class ClassConstant extends Constant {
     
 }
