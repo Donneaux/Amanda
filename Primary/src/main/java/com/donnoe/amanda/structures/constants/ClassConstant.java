@@ -8,6 +8,12 @@ package com.donnoe.amanda.structures.constants;
  * @author joshuadonnoe
  */
 import com.donnoe.amanda.annotations.ConstantIndexer;
+import com.donnoe.amanda.structures.ClassFile;
 
-@ConstantIndexer({'#','d'})
-public class ClassConstant extends Constant {}
+@ConstantIndexer(7)
+public class ClassConstant extends Constant {
+    protected ClassConstant(ClassFile cF) {
+        super(cF);
+    }
+    public void read() {}
+}

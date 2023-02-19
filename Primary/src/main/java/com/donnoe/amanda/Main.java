@@ -12,6 +12,12 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) {
-        new ClassFile("target/classes/com/donnoe/amanda/Main.class");
+        ClassFile cF = new ClassFile("target/classes/com/donnoe/amanda/Main.class");
+        try {
+            cF.read();
+        } catch (IOException x) {
+            throw new AssertionError(x);
+        }
+        System.out.println(cF);
     }
 }

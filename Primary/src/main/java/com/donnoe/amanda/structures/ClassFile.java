@@ -4,19 +4,31 @@
  */
 package com.donnoe.amanda.structures;
 import java.io.*;
+import java.util.concurrent.*;
 /**
  *
  * @author joshuadonnoe
  */
 public class ClassFile extends Structure {
     
-    public DataInputStream dIS;
+    public static ExecutorService eS = Executors.newCachedThreadPool();
+    
+    public Future<byte[]> bytesFuture;
+    public Future<DataInputStream> dISFuture;
     
     public ClassFile(String fileName) {
-        try {
-            dIS = new DataInputStream(new FileInputStream(fileName));
-        } catch (FileNotFoundException x) {
-            throw new AssertionError(x);
-        }
+        super(null);
+        this.cF = this;
+        bytesFuture = eS.submit(() -> new FileInputStream(fileName).readAllBytes());
+    }
+   
+    public void read() throws IOException {
+    }
+    
+    @Override
+    public String toString() {
+        var sb = new StringBuilder();
+        sb.append("ClassFile");
+        return sb.toString();
     }
 }
